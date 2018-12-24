@@ -95,20 +95,9 @@ print(X_train[cat_df.columns.values].head())
 
 X_train[cat_df.columns.values] = X_train[cat_df.columns.values].apply(le.fit_transform)
 X_test[cat_df.columns.values] = X_test[cat_df.columns.values].apply(le.fit_transform)
-#X_train[cat_df.columns.values] = le.fit_transform(X_train[cat_df.columns.values])
-
-#le.transform(X_train[cat_df.columns.values])
-#le.transform(X_test[cat_df.columns.values])
 
 y_train = y_train.replace({'No' : 0, 'Yes' : 1}).astype(int)
 y_test = y_test.replace({'No' : 0, 'Yes' : 1}).astype(int)
-
-#X_train[credit.policy] = X_train[credit.policy].replace({'No' : 0, 'Yes' : 1}).astype(int)
-#X_test[credit.policy] = X_test[credit.policy].replace({'No' : 0, 'Yes' : 1}).astype(int)
-
-#X_train[delinq.2yrs] = X_train[delinq.2yrs].replace({'No' : 0, 'Yes' : 1}).astype(int)
-#X_test[delinq.2yrs] = X_test[delinq.2yrs].replace({'No' : 0, 'Yes' : 1}).astype(int)
-
 
 model = DecisionTreeClassifier(random_state = 0)
 model.fit(X_train, y_train)
